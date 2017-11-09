@@ -30,14 +30,14 @@ Application.$controller("DepartmentLiveForm1Controller", ["$scope",
 	}
 ]);
 
-Application.$controller("SalesTable1Controller", ["$scope",
+Application.$controller("ChannelsTable1Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;
 	}
 ]);
 
-Application.$controller("SalesLiveForm1Controller", ["$scope",
+Application.$controller("ChannelsLiveForm1Controller", ["$scope",
 	function($scope) {
 		"use strict";
 		$scope.ctrlScope = $scope;
