@@ -1,6 +1,129 @@
-<wm-page data-ng-controller="QueriesPageController" pagetitle="Queries"> 
-    <wm-content> 
-        <wm-page-content columnwidth="12"> 
-        </wm-page-content> 
-    </wm-content> 
+<wm-page data-ng-controller="QueriesPageController" pagetitle="Queries" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-tabs name="tabs1">
+                <wm-tabpane name="tabpane1" title="Employee_NativeSQL">
+                    <wm-table name="executeEmployee_NativeSQLTable1" title="" dataset="bind:Variables.HrdbExecuteEmployee_NativeSQL.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
+                        <wm-table-column binding="zip" caption="Zip" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="empId" caption="Emp Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="firstname" caption="Firstname" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="birthdate" caption="Birthdate" edit-widget-type="date" type="date" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="role" caption="Role" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="city" caption="City" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="jobTitle" caption="Job Title" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="deptId" caption="Dept Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="managerId" caption="Manager Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="lastname" caption="Lastname" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="password" caption="Password" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="picurl" caption="Picurl" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="state" caption="State" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="street" caption="Street" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="tenantId" caption="Tenant Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="username" caption="Username" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane2" title="Employee_HQL">
+                    <wm-table name="executeEmployee_HSQLTable1" title="" dataset="bind:Variables.HrdbExecuteEmployee_HSQL.dataSet" navigation="Pager" exportformat="EXCEL,CSV">
+                        <wm-table-column binding="zip" caption="Zip" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="empId" caption="Emp Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="firstname" caption="Firstname" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="birthdate" caption="Birthdate" edit-widget-type="date" type="date" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="role" caption="Role" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="city" caption="City" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="jobTitle" caption="Job Title" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="deptId" caption="Dept Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="managerId" caption="Manager Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="lastname" caption="Lastname" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="picurl" caption="Picurl" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="password" caption="Password" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="street" caption="Street" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="tenantId" caption="Tenant Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="state" caption="State" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="department" caption="Department" edit-widget-type="text" type="department" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="username" caption="Username" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.zip" caption="Employeebymanagerid Zip" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.empId" caption="Employeebymanagerid Emp Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.firstname" caption="Employeebymanagerid Firstname" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.birthdate" caption="Employeebymanagerid Birthdate" edit-widget-type="date" type="date" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.role" caption="Employeebymanagerid Role" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.city" caption="Employeebymanagerid City" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.jobTitle" caption="Employeebymanagerid Job Title" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.deptId" caption="Employeebymanagerid Dept Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.managerId" caption="Employeebymanagerid Manager Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.lastname" caption="Employeebymanagerid Lastname" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.picurl" caption="Employeebymanagerid Picurl" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.employeeByManagerId" caption="Employeebymanagerid Employee By Manager Id" edit-widget-type="text" type="employee" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.password" caption="Employeebymanagerid Password" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.street" caption="Employeebymanagerid Street" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.tenantId" caption="Employeebymanagerid Tenant Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.state" caption="Employeebymanagerid State" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.username" caption="Employeebymanagerid Username" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.q1" caption="Employeebymanagerid.department Q1" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.q2" caption="Employeebymanagerid.department Q2" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.q3" caption="Employeebymanagerid.department Q3" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.q4" caption="Employeebymanagerid.department Q4" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.deptId" caption="Employeebymanagerid.department Dept Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.name" caption="Employeebymanagerid.department Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.tenantId" caption="Employeebymanagerid.department Tenant Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.location" caption="Employeebymanagerid.department Location" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.deptCode" caption="Employeebymanagerid.department Dept Code" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="employeeByManagerId.department.budget" caption="Employeebymanagerid.department Budget" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane3" title="Sales_NativeSQL">
+                    <wm-table name="executeSales_NativeSQLTable1" title="" dataset="bind:Variables.SalesdbExecuteSales_NativeSQL.dataSet" navigation="Classic" exportformat="EXCEL,CSV">
+                        <wm-table-column binding="isRenewal" caption="Is Renewal" edit-widget-type="checkbox" type="boolean" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="productId" caption="Product Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="entryDate" caption="Entry Date" edit-widget-type="date" type="date" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="id" caption="Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quoteId" caption="Quote Id" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="sales" caption="Sales" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane4" title="Sales_HQL">
+                    <wm-table name="executeSales_HSQLTable1" title="" dataset="bind:Variables.SalesdbExecuteSales_HSQL.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
+                        <wm-table-column binding="isRenewal" caption="Is Renewal" edit-widget-type="checkbox" type="boolean" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="productId" caption="Product Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="entryDate" caption="Entry Date" edit-widget-type="date" type="date" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="id" caption="Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quoteId" caption="Quote Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="sales" caption="Sales" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="products.name" caption="Products Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="products.id" caption="Products Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.entryDate" caption="Quotes Entry Date" edit-widget-type="date" type="date" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.estimatedSale" caption="Quotes Estimated Sale" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.id" caption="Quotes Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.repId" caption="Quotes Rep Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leadId" caption="Quotes Lead Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.zip" caption="Quotes.reps Zip" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.role" caption="Quotes.reps Role" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.city" caption="Quotes.reps City" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.channelType" caption="Quotes.reps Channel Type" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.picurl" caption="Quotes.reps Picurl" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.password" caption="Quotes.reps Password" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.street" caption="Quotes.reps Street" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.name" caption="Quotes.reps Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.id" caption="Quotes.reps Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.state" caption="Quotes.reps State" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.username" caption="Quotes.reps Username" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.channels.name" caption="Quotes.reps.channels Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.reps.channels.id" caption="Quotes.reps.channels Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.entryDate" caption="Quotes.leads Entry Date" edit-widget-type="date" type="date" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.customerId" caption="Quotes.leads Customer Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.id" caption="Quotes.leads Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.customers.stateId" caption="Quotes.leads.customers State Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.customers.name" caption="Quotes.leads.customers Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.customers.id" caption="Quotes.leads.customers Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.customers.states.name" caption="Quotes.leads.customers.states Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.customers.states.id" caption="Quotes.leads.customers.states Id" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="quotes.leads.customers.states.abbrev" caption="Quotes.leads.customers.states Abbrev" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>

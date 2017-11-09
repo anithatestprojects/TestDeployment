@@ -1,10 +1,10 @@
 <wm-partial data-ng-controller="leftnavPageController" name="leftnav" type="leftnav">
     <wm-nav name="leftnavigation" type="pills" layout="stacked">
         <wm-nav-item name="list_dashboard">
-            <wm-anchor caption="Dashboard" name="dashboardLink" iconclass="wi wi-bar-graph"></wm-anchor>
+            <wm-anchor caption="Test" name="dashboardLink" iconclass="wi wi-bar-graph" on-click="Actions.goToPage_Test.invoke()"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_order">
-            <wm-anchor caption="Pending Orders" name="orderLink" iconclass="wi wi-file"></wm-anchor>
+            <wm-anchor caption="Queries" name="orderLink" iconclass="wi wi-file" on-click="Actions.goToPage_Queries.invoke()"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_inventory">
             <wm-anchor caption="Inventory" name="inventoryLink" iconclass="wi wi-tag"></wm-anchor>

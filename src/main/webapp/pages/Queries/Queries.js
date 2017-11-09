@@ -15,3 +15,32 @@ Application.$controller("QueriesPageController", ["$scope", function ($scope) {
     };
 
 }]);
+
+
+Application.$controller("executeEmployee_NativeSQLTable1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("executeEmployee_HSQLTable1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("executeSales_NativeSQLTable1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("executeSales_HSQLTable1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);

@@ -1,26 +1,30 @@
 <wm-page data-ng-controller="TestPageController" pagetitle="Test" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
     <wm-content name="content1">
-        <wm-page-content columnwidth="12" name="page_content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
             <wm-livetable formlayout="dialog" name="TasksLiveTable1">
-                <wm-table gridfirstrowselect="true" editmode="dialog" name="TasksTable1" title="Tasks List" dataset="bind:Variables.SalesdbTasksData.dataSet" navigation="Basic">
-                    <wm-table-column binding="id" caption="Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
-                    <wm-table-column binding="description" caption="Description" generator="assigned" pcdisplay="true" mobiledisplay="true" type="text"></wm-table-column>
-                    <wm-table-column binding="duedate" caption="Duedate" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
-                    <wm-table-column binding="done" caption="Done" generator="assigned" pcdisplay="true" mobiledisplay="true" type="boolean"></wm-table-column>
-                    <wm-table-column binding="reps.id" caption="Reps Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" related-entity-name="Reps"></wm-table-column>
-                    <wm-table-column binding="reps.name" caption="Reps Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.street" caption="Reps Street" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.city" caption="Reps City" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.state" caption="Reps State" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.zip" caption="Reps Zip" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.picurl" caption="Reps Picurl" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.password" caption="Reps Password" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.role" caption="Reps Role" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.username" caption="Reps Username" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-column binding="reps.channelType" caption="Channel Type" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" related-entity-name="Reps" readonly="true"></wm-table-column>
-                    <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
-                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
-                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
+                <wm-table gridfirstrowselect="true" editmode="dialog" name="TasksTable1" title="Tasks List" dataset="bind:Variables.SalesdbTasksData.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
+                    <wm-table-column binding="id" caption="Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="description" caption="Description" edit-widget-type="text" type="text" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="duedate" caption="Duedate" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="done" caption="Done" edit-widget-type="checkbox" type="boolean" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="reps.id" caption="Reps Id" primary-key="true" edit-widget-type="select" related-entity-name="Reps" type="integer" generator="identity" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="reps.name" caption="Reps Name" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.street" caption="Reps Street" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.city" caption="Reps City" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.state" caption="Reps State" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.zip" caption="Reps Zip" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.picurl" caption="Reps Picurl" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.password" caption="Reps Password" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.role" caption="Reps Role" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.username" caption="Reps Username" edit-widget-type="text" related-entity-name="Reps" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="reps.channelType" caption="Channel Type" edit-widget-type="number" related-entity-name="Reps" type="integer" generator="assigned" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="rowOperations" caption="Actions" width="120px" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                    <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action>
                 </wm-table>
                 <wm-liveform errormessage="" title="Tasks Info" formlayout="dialog" iconclass="wi wi-edit" name="TasksLiveForm1" dataset="bind:Variables.SalesdbTasksData.dataSet" captionalign="left" captionposition="top">
                     <wm-layoutgrid columns="3" name="layoutgrid1">
@@ -50,20 +54,21 @@
                 </wm-liveform>
             </wm-livetable>
             <wm-livetable formlayout="dialog" name="DepartmentLiveTable1">
-                <wm-table gridfirstrowselect="true" editmode="dialog" name="DepartmentTable1" title="Department List" dataset="bind:Variables.HrdbDepartmentData.dataSet" navigation="Basic">
-                    <wm-table-column binding="deptId" caption="Dept Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
-                    <wm-table-column binding="name" caption="Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                    <wm-table-column binding="budget" caption="Budget" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
-                    <wm-table-column binding="q1" caption="Q1" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
-                    <wm-table-column binding="q2" caption="Q2" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
-                    <wm-table-column binding="q3" caption="Q3" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
-                    <wm-table-column binding="q4" caption="Q4" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
-                    <wm-table-column binding="deptCode" caption="Dept Code" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                    <wm-table-column binding="location" caption="Location" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                    <wm-table-column binding="tenantId" caption="Tenant Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
-                    <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
-                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
-                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
+                <wm-table gridfirstrowselect="true" editmode="dialog" name="DepartmentTable1" title="Department List" dataset="bind:Variables.HrdbDepartmentData.dataSet" navigation="Basic" exportformat="EXCEL,CSV">
+                    <wm-table-column binding="deptId" caption="Dept Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
+                    <wm-table-column binding="name" caption="Name" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="budget" caption="Budget" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="q1" caption="Q1" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="q2" caption="Q2" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="q3" caption="Q3" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="q4" caption="Q4" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="deptCode" caption="Dept Code" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="location" caption="Location" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="tenantId" caption="Tenant Id" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="rowOperations" caption="Actions" width="120px" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                    <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action>
                 </wm-table>
                 <wm-liveform errormessage="" title="Department Info" formlayout="dialog" iconclass="wi wi-edit" name="DepartmentLiveForm1" dataset="bind:Variables.HrdbDepartmentData.dataSet" captionalign="left" captionposition="top">
                     <wm-layoutgrid columns="3" name="layoutgrid3">
@@ -111,4 +116,5 @@
             </wm-livetable>
         </wm-page-content>
     </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>
