@@ -1,0 +1,101 @@
+{
+  "Sales_HSQL" : {
+    "name" : "Sales_HSQL",
+    "description" : "Sales_HSQL",
+    "version" : "V2",
+    "queryString" : "from Sales",
+    "countQueryString" : "select count(*) from Sales",
+    "nativeSql" : false,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testdeployment.salesdb.Sales",
+      "returns" : "ENTITY",
+      "responseType" : "PAGINATED"
+    }
+  },
+  "Sales_NativeSQL" : {
+    "name" : "Sales_NativeSQL",
+    "description" : "Sales_NativeSQL",
+    "version" : "V2",
+    "queryString" : "select * from SALES",
+    "countQueryString" : "select count(*) from (select * from SALES) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testdeployment.salesdb.models.query.SalesNativeSqlResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "ENTRY_DATE",
+        "fieldName" : "entryDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "QUOTE_ID",
+        "fieldName" : "quoteId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "PRODUCT_ID",
+        "fieldName" : "productId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "SALES",
+        "fieldName" : "sales",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "IS_RENEWAL",
+        "fieldName" : "isRenewal",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Boolean",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

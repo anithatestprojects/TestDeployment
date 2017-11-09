@@ -11,6 +11,14 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "Queries",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Test",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "footer",
   "type" : "FOOTER",
   "params" : [ ]

@@ -1,0 +1,114 @@
+<wm-page data-ng-controller="TestPageController" pagetitle="Test" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-livetable formlayout="dialog" name="TasksLiveTable1">
+                <wm-table gridfirstrowselect="true" editmode="dialog" name="TasksTable1" title="Tasks List" dataset="bind:Variables.SalesdbTasksData.dataSet" navigation="Basic">
+                    <wm-table-column binding="id" caption="Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
+                    <wm-table-column binding="description" caption="Description" generator="assigned" pcdisplay="true" mobiledisplay="true" type="text"></wm-table-column>
+                    <wm-table-column binding="duedate" caption="Duedate" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                    <wm-table-column binding="done" caption="Done" generator="assigned" pcdisplay="true" mobiledisplay="true" type="boolean"></wm-table-column>
+                    <wm-table-column binding="reps.id" caption="Reps Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" related-entity-name="Reps"></wm-table-column>
+                    <wm-table-column binding="reps.name" caption="Reps Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.street" caption="Reps Street" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.city" caption="Reps City" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.state" caption="Reps State" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.zip" caption="Reps Zip" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.picurl" caption="Reps Picurl" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.password" caption="Reps Password" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.role" caption="Reps Role" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.username" caption="Reps Username" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-column binding="reps.channelType" caption="Channel Type" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" related-entity-name="Reps" readonly="true"></wm-table-column>
+                    <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
+                </wm-table>
+                <wm-liveform errormessage="" title="Tasks Info" formlayout="dialog" iconclass="wi wi-edit" name="TasksLiveForm1" dataset="bind:Variables.SalesdbTasksData.dataSet" captionalign="left" captionposition="top">
+                    <wm-layoutgrid columns="3" name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                                <wm-form-field name="description" displayname="Description" required="false" show="true" generator="assigned" primary-key="false" key="description" type="text" is-related="false" maxchars="16777216" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn2">
+                                <wm-form-field name="duedate" displayname="Duedate" required="false" show="true" generator="assigned" primary-key="false" key="duedate" type="date" is-related="false" pc-display="true" mobile-display="true" widget="date"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                                <wm-form-field name="done" displayname="Done" required="false" show="true" generator="assigned" primary-key="false" key="done" type="boolean" is-related="false" pc-display="true" mobile-display="true" widget="checkbox"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn4">
+                                <wm-form-field name="reps" displayname="Reps" required="false" show="true" generator="assigned" primary-key="false" key="reps" type="list" is-related="true" pc-display="true" mobile-display="true" widget="select"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn5"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn6"></wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-field name="id" displayname="Id" required="true" show="false" generator="identity" primary-key="true" key="id" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livetable>
+            <wm-livetable formlayout="dialog" name="DepartmentLiveTable1">
+                <wm-table gridfirstrowselect="true" editmode="dialog" name="DepartmentTable1" title="Department List" dataset="bind:Variables.HrdbDepartmentData.dataSet" navigation="Basic">
+                    <wm-table-column binding="deptId" caption="Dept Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
+                    <wm-table-column binding="name" caption="Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="budget" caption="Budget" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                    <wm-table-column binding="q1" caption="Q1" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                    <wm-table-column binding="q2" caption="Q2" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                    <wm-table-column binding="q3" caption="Q3" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                    <wm-table-column binding="q4" caption="Q4" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                    <wm-table-column binding="deptCode" caption="Dept Code" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="location" caption="Location" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="tenantId" caption="Tenant Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column>
+                    <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
+                </wm-table>
+                <wm-liveform errormessage="" title="Department Info" formlayout="dialog" iconclass="wi wi-edit" name="DepartmentLiveForm1" dataset="bind:Variables.HrdbDepartmentData.dataSet" captionalign="left" captionposition="top">
+                    <wm-layoutgrid columns="3" name="layoutgrid3">
+                        <wm-gridrow name="gridrow6">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn16">
+                                <wm-form-field name="name" displayname="Name" required="false" show="true" generator="assigned" primary-key="false" key="name" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true" widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn17">
+                                <wm-form-field name="budget" displayname="Budget" required="false" show="true" generator="assigned" primary-key="false" key="budget" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn18">
+                                <wm-form-field name="q1" displayname="Q1" required="false" show="true" generator="assigned" primary-key="false" key="q1" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow7">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn19">
+                                <wm-form-field name="q2" displayname="Q2" required="false" show="true" generator="assigned" primary-key="false" key="q2" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn20">
+                                <wm-form-field name="q3" displayname="Q3" required="false" show="true" generator="assigned" primary-key="false" key="q3" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn21">
+                                <wm-form-field name="q4" displayname="Q4" required="false" show="true" generator="assigned" primary-key="false" key="q4" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow8">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn22">
+                                <wm-form-field name="deptCode" displayname="Dept Code" required="false" show="true" generator="assigned" primary-key="false" key="deptCode" type="string" is-related="false" maxchars="20" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn23">
+                                <wm-form-field name="location" displayname="Location" required="false" show="true" generator="assigned" primary-key="false" key="location" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn24">
+                                <wm-form-field name="tenantId" displayname="Tenant Id" required="false" show="true" generator="assigned" primary-key="false" key="tenantId" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true"
+                                    widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-field name="deptId" displayname="Dept Id" required="true" show="false" generator="identity" primary-key="true" key="deptId" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livetable>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

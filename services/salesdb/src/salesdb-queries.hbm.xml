@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="Sales_NativeSQL">
+        <![CDATA[
+        select * from SALES
+        ]]>
+    </sql-query>
+
+    <sql-query name="Sales_NativeSQL__count">
+        <![CDATA[
+        select count(*) from (select * from SALES) wmTempTable
+        ]]>
+    </sql-query>
+
+    <query name="Sales_HSQL">
+        <![CDATA[
+        from Sales
+        ]]>
+    </query>
+
+    <query name="Sales_HSQL__count">
+        <![CDATA[
+        select count(*) from Sales
+        ]]>
+    </query>
+</hibernate-mapping>

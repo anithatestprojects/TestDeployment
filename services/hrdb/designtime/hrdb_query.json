@@ -1,0 +1,191 @@
+{
+  "Employee_HSQL" : {
+    "name" : "Employee_HSQL",
+    "description" : "Employee_HSQL",
+    "version" : "V2",
+    "queryString" : "from Employee",
+    "countQueryString" : "select count(*) from Employee",
+    "nativeSql" : false,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testdeployment.hrdb.Employee",
+      "returns" : "ENTITY",
+      "responseType" : "PAGINATED"
+    }
+  },
+  "Employee_NativeSQL" : {
+    "name" : "Employee_NativeSQL",
+    "description" : "Employee",
+    "version" : "V2",
+    "queryString" : "select * from Employee",
+    "countQueryString" : "select count(*) from (select * from Employee) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.testdeployment.hrdb.models.query.EmployeeNativeSqlResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "EMP_ID",
+        "fieldName" : "empId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "FIRSTNAME",
+        "fieldName" : "firstname",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "LASTNAME",
+        "fieldName" : "lastname",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "STREET",
+        "fieldName" : "street",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "CITY",
+        "fieldName" : "city",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "STATE",
+        "fieldName" : "state",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ZIP",
+        "fieldName" : "zip",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "BIRTHDATE",
+        "fieldName" : "birthdate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Date",
+          "list" : false
+        }
+      }, {
+        "name" : "PICURL",
+        "fieldName" : "picurl",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "JOB_TITLE",
+        "fieldName" : "jobTitle",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "DEPT_ID",
+        "fieldName" : "deptId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "USERNAME",
+        "fieldName" : "username",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "PASSWORD",
+        "fieldName" : "password",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ROLE",
+        "fieldName" : "role",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "MANAGER_ID",
+        "fieldName" : "managerId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      }, {
+        "name" : "TENANT_ID",
+        "fieldName" : "tenantId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

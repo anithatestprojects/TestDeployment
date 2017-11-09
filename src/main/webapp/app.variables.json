@@ -23,6 +23,28 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
+  "goToPage_Queries" : {
+    "_id" : "wm-goToPage_Queries-wm.NavigationVariable-1510210557501",
+    "name" : "goToPage_Queries",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Queries",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Test" : {
+    "_id" : "wm-goToPage_Test-wm.NavigationVariable-1510205987819",
+    "name" : "goToPage_Test",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Test",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
     "name" : "supportedLocale",
